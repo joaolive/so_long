@@ -6,7 +6,7 @@
 /*   By: joaolive <joaolive@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 18:40:37 by joaolive          #+#    #+#             */
-/*   Updated: 2025/09/10 22:18:10 by joaolive         ###   ########.fr       */
+/*   Updated: 2025/09/12 18:58:46 by joaolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ static int	ft_validate_flags(t_mstat *meta)
 {
 	if (!meta)
 		return (0);
-	return (!(meta->player_count != 1 || meta->collectibles_count <= 0
-			|| meta->exit_count != 1 || meta->player_x < 0
-			|| meta->player_y < 0));
+	return (!(meta->player_count != 1 || meta->collect_count <= 0
+			|| meta->exit_count != 1 || meta->px < 0
+			|| meta->py < 0));
 }
 
 static int	ft_mark_flags(char **grid, t_mstat *meta, size_t i, size_t j)
@@ -26,8 +26,8 @@ static int	ft_mark_flags(char **grid, t_mstat *meta, size_t i, size_t j)
 	if (grid[i][j] == 'P')
 	{
 		meta->player_count += 1;
-		meta->player_y = i;
-		meta->player_x = j;
+		meta->py = i;
+		meta->px = j;
 	}
 	else if (grid[i][j] == 'E')
 	{
@@ -36,7 +36,7 @@ static int	ft_mark_flags(char **grid, t_mstat *meta, size_t i, size_t j)
 		meta->exit_x = j;
 	}
 	else if (grid[i][j] == 'C')
-		meta->collectibles_count += 1;
+		meta->collect_count += 1;
 	else if (grid[i][j] != '0' && grid[i][j] != '1')
 		return (0);
 	return (1);

@@ -6,7 +6,7 @@
 /*   By: joaolive <joaolive@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 13:48:52 by joaolive          #+#    #+#             */
-/*   Updated: 2025/09/09 14:24:13 by joaolive         ###   ########.fr       */
+/*   Updated: 2025/09/12 18:58:46 by joaolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ t_map	*ft_initializr_map(char **grid, t_mstat *meta)
 	map->grid = grid;
 	map->height = meta->height;
 	map->width = meta->width;
-	map->collectibles_count = meta->collectibles_count;
+	map->collect_count = meta->collect_count;
 	map->exit_count = meta->exit_count;
-	map->player_pos.x = meta->player_x;
-	map->player_pos.y = meta->player_y;
+	map->px = meta->px;
+	map->py = meta->py;
 	return (map);
 }

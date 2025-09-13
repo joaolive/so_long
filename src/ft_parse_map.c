@@ -6,7 +6,7 @@
 /*   By: joaolive <joaolive@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/06 08:04:33 by joaolive          #+#    #+#             */
-/*   Updated: 2025/09/10 22:17:53 by joaolive         ###   ########.fr       */
+/*   Updated: 2025/09/12 18:58:46 by joaolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ static void	ft_initializr_meta(t_mstat *meta)
 {
 	meta->height = -1;
 	meta->width = -1;
-	meta->player_x = -1;
-	meta->player_y = -1;
+	meta->px = -1;
+	meta->py = -1;
 	meta->player_count = 0;
 	meta->exit_x = -1;
 	meta->exit_y = -1;
 	meta->exit_count = 0;
-	meta->collectibles_count = 0;
+	meta->collect_count = 0;
 }
 
 t_map	*ft_parse_map(char *path)

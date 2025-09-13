@@ -6,7 +6,7 @@
 #    By: joaolive <joaolive@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/06 05:55:59 by joaolive          #+#    #+#              #
-#    Updated: 2025/09/11 10:41:07 by joaolive         ###   ########.fr        #
+#    Updated: 2025/09/13 14:08:39 by joaolive         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,16 +28,16 @@ SRC_DIR = src
 OBJ_DIR = obj
 LIBFT_DIR = deps/libft
 MLX_DIR = deps/mlx
+MLX_BUILD  = $(MLX_DIR)/build
 
 # Flags and Includes
-CCFLAGS = -Wall -Wextra -Werror
-MLXFLAGS = -lmlx -lXext -lX11 -lm
+CCFLAGS = -Wall -Wextra -Werror -g
 DEPFLAGS = -MMD -MP
-CPPFLAGS = -Iinclude -I$(LIBFT_DIR)/include
+CPPFLAGS = -Iinclude -I$(LIBFT_DIR)/include -I$(MLX_DIR)/include
 
 # Libft and MLX
-LDFLAGS = -L$(LIBFT_DIR) -L$(MLX_DIR)
-LDLIBS = -lft $(MLXFLAGS)
+LDFLAGS = -L$(LIBFT_DIR) -L$(MLX_BUILD)
+LDLIBS = -lft -lmlx42 -lglfw -lpng16 -ldl -pthread -lm
 
 SRC_NAMES = $(addsuffix .c, \
 			ft_initializr_map \
@@ -53,6 +53,16 @@ SRC_NAMES = $(addsuffix .c, \
 			ft_clean_up \
 			ft_fill_grid \
 			ft_count_rows \
+			ft_load_image \
+			ft_load_all_images \
+			ft_render \
+			ft_cleanup_assets \
+			ft_terminate \
+			ft_initializr_game \
+			ft_hook_handler \
+			ft_player_hook_handler \
+			ft_player_mv_hook \
+			ft_disable_collectible \
 			main)
 
 # Source files
@@ -82,14 +92,19 @@ build: $(NAME)
 	@echo "───────────────────────────────────────────────────"
 	@echo ""
 
-$(NAME): $(SRC_OBJS)
-# Ensures libft is compiled
-	@$(MAKE) -C $(LIBFT_DIR) gnl
+$(NAME): $(MLX_BUILD)/libmlx42.a $(SRC_OBJS)
+	@$(MAKE) -C $(LIBFT_DIR) gnl printf
 	$(CC) $(SRC_OBJS) -o $(NAME) $(LDFLAGS) $(LDLIBS)
 	@echo "🎉 $(NAME) compiled successfully! 🎊"
 
 # Include dependency files to track header changes
 -include $(DEPS)
+
+$(MLX_BUILD)/libmlx42.a:
+	@mkdir -p $(MLX_BUILD)
+	@printf "  $(CC_YELLOW)[CC]$(RESET) $(CC_PINK)Compiling$(RESET) $(CC_BLUE)MLX$(RESET) $(CC_PINK)library$(RESET) $(CC_YELLOW)%-28s$(RESET)\n" $< $@
+	@cd $(MLX_BUILD) && cmake .. >/dev/null
+	@cmake --build $(MLX_BUILD) -j4
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
@@ -105,6 +120,7 @@ clean:
 fclean: clean
 	@$(RM) $(NAME)
 	@make fclean -s -C $(LIBFT_DIR)
+	@$(RM) $(MLX_BUILD)
 	@echo "🧹 Full clean complete! Library removed."
 
 re: fclean all
