@@ -6,7 +6,7 @@
 #    By: joaolive <joaolive@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/06 05:55:59 by joaolive          #+#    #+#              #
-#    Updated: 2025/09/13 14:08:39 by joaolive         ###   ########.fr        #
+#    Updated: 2025/09/13 19:27:55 by joaolive         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,9 +60,10 @@ SRC_NAMES = $(addsuffix .c, \
 			ft_terminate \
 			ft_initializr_game \
 			ft_hook_handler \
-			ft_player_hook_handler \
 			ft_player_mv_hook \
 			ft_disable_collectible \
+			ft_print_error \
+			ft_close_window_hook \
 			main)
 
 # Source files

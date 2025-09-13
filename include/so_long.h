@@ -6,7 +6,7 @@
 /*   By: joaolive <joaolive@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 14:14:03 by joaolive          #+#    #+#             */
-/*   Updated: 2025/09/13 14:13:10 by joaolive         ###   ########.fr       */
+/*   Updated: 2025/09/13 19:27:46 by joaolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,9 @@ bool		ft_render(t_game *game);
 void		ft_cleanup_assets(t_game *game);
 void		ft_terminate(t_game *game);
 t_game		*ft_initializr_game(t_map *map);
-void		ft_hook_handler(void *param);
-void		ft_player_hook_handler(mlx_key_data_t keydata, void *param);
+void		ft_hook_handler(mlx_key_data_t keydata, void *param);
 void		ft_player_mv_hook(t_game *game, int new_x, int new_y);
 void		ft_disable_collectible(t_game *game, int y, int x);
+void		ft_print_error(char *str);
+void		ft_close_window_hook(void *param);
 #endif

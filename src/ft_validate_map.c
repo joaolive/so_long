@@ -6,13 +6,12 @@
 /*   By: joaolive <joaolive@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/07 09:28:36 by joaolive          #+#    #+#             */
-/*   Updated: 2025/09/10 22:02:39 by joaolive         ###   ########.fr       */
+/*   Updated: 2025/09/13 18:02:36 by joaolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-#include <stdio.h>
 int	ft_validate_map(char **grid, t_mstat *meta)
 {
 	if (!grid || !*grid || !meta)

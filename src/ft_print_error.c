@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_terminate.c                                     :+:      :+:    :+:   */
+/*   ft_print_error.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joaolive <joaolive@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/12 11:13:46 by joaolive          #+#    #+#             */
-/*   Updated: 2025/09/13 18:18:23 by joaolive         ###   ########.fr       */
+/*   Created: 2025/09/13 17:08:05 by joaolive          #+#    #+#             */
+/*   Updated: 2025/09/13 17:51:13 by joaolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_terminate(t_game *game)
+void	ft_print_error(char *str)
 {
-	if (!game)
-		return ;
-	ft_cleanup_assets(game);
-	if (game->map->grid)
-		ft_clean_up(game->map->grid);
-	free(game->map);
-	if (game->mlx)
-		mlx_terminate(game->mlx);
-	free(game);
+	ft_putendl_fd("Error", 2);
+	ft_putendl_fd(str, 2);
 }

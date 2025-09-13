@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_terminate.c                                     :+:      :+:    :+:   */
+/*   ft_close_window_hook.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joaolive <joaolive@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/12 11:13:46 by joaolive          #+#    #+#             */
-/*   Updated: 2025/09/13 18:18:23 by joaolive         ###   ########.fr       */
+/*   Created: 2025/09/13 18:53:07 by joaolive          #+#    #+#             */
+/*   Updated: 2025/09/13 18:55:44 by joaolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_terminate(t_game *game)
+void	ft_close_window_hook(void *param)
 {
-	if (!game)
-		return ;
-	ft_cleanup_assets(game);
-	if (game->map->grid)
-		ft_clean_up(game->map->grid);
-	free(game->map);
-	if (game->mlx)
-		mlx_terminate(game->mlx);
-	free(game);
+	t_game	*game;
+
+	game = (t_game *)param;
+	ft_terminate(game);
+	exit(0);
 }
