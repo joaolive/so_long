@@ -6,11 +6,11 @@
 /*   By: joaolive <joaolive@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 17:51:01 by joaolive          #+#    #+#             */
-/*   Updated: 2025/09/01 10:39:23 by joaolive         ###   ########.fr       */
+/*   Updated: 2025/09/14 09:17:40 by joaolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "core.h"
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {

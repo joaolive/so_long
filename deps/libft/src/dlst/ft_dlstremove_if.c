@@ -6,11 +6,11 @@
 /*   By: joaolive <joaolive@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 09:48:19 by joaolive          #+#    #+#             */
-/*   Updated: 2025/08/31 15:27:27 by joaolive         ###   ########.fr       */
+/*   Updated: 2025/09/14 09:17:55 by joaolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "dlst.h"
+#include "libft.h"
 
 /**
  * @brief Removes all nodes from the list that satisfy a given condition.

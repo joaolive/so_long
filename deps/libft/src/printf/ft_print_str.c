@@ -6,11 +6,11 @@
 /*   By: joaolive <joaolive@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:08:46 by joaolive          #+#    #+#             */
-/*   Updated: 2025/07/30 10:46:11 by joaolive         ###   ########.fr       */
+/*   Updated: 2025/09/14 09:18:41 by joaolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 int	ft_print_str(va_list args)
 {

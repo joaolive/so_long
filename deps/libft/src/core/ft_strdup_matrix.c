@@ -6,11 +6,11 @@
 /*   By: joaolive <joaolive@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 18:03:28 by joaolive          #+#    #+#             */
-/*   Updated: 2025/09/09 17:00:11 by joaolive         ###   ########.fr       */
+/*   Updated: 2025/09/14 09:17:40 by joaolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "core.h"
+#include "libft.h"
 
 static void	ft_clean(char **arr)
 {

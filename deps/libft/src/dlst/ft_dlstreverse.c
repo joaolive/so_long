@@ -6,11 +6,11 @@
 /*   By: joaolive <joaolive@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 13:45:04 by joaolive          #+#    #+#             */
-/*   Updated: 2025/08/31 15:27:32 by joaolive         ###   ########.fr       */
+/*   Updated: 2025/09/14 09:17:55 by joaolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "dlst.h"
+#include "libft.h"
 
 /**
  * @brief Reverses the order of the nodes in a doubly linked list.

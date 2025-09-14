@@ -6,11 +6,11 @@
 /*   By: joaolive <joaolive@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 18:34:46 by joaolive          #+#    #+#             */
-/*   Updated: 2025/09/01 10:40:17 by joaolive         ###   ########.fr       */
+/*   Updated: 2025/09/14 09:17:40 by joaolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "core.h"
+#include "libft.h"
 
 long	ft_atol(const char *nptr)
 {

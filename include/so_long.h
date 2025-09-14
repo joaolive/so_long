@@ -6,7 +6,7 @@
 /*   By: joaolive <joaolive@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 14:14:03 by joaolive          #+#    #+#             */
-/*   Updated: 2025/09/13 19:27:46 by joaolive         ###   ########.fr       */
+/*   Updated: 2025/09/14 09:29:53 by joaolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,11 @@
 # include "../deps/libft/include/libft.h"
 # include "../deps/mlx/include/MLX42/MLX42.h"
 
-#define WALL_PATH "./assets/wall.png"
-#define FLOOR_PATH "./assets/floor.png"
-#define PLAYER_PATH "./assets/player.png"
-#define COLLECTIBLE_PATH "./assets/collect.png"
-#define EXIT_PATH "./assets/exit.png"
-
-#define SPEED 5
+# define WALL_PATH "./assets/wall.png"
+# define FLOOR_PATH "./assets/floor.png"
+# define PLAYER_PATH "./assets/player.png"
+# define COLLECTIBLE_PATH "./assets/collect.png"
+# define EXIT_PATH "./assets/exit.png"
 
 typedef struct s_mstat
 {

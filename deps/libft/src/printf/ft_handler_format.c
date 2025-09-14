@@ -6,11 +6,11 @@
 /*   By: joaolive <joaolive@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 10:44:43 by joaolive          #+#    #+#             */
-/*   Updated: 2025/07/31 11:12:55 by joaolive         ###   ########.fr       */
+/*   Updated: 2025/09/14 09:18:41 by joaolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 static void	ft_initialize_dispath_table(t_handler table[])
 {

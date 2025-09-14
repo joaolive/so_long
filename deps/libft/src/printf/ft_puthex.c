@@ -6,11 +6,11 @@
 /*   By: joaolive <joaolive@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 12:00:49 by joaolive          #+#    #+#             */
-/*   Updated: 2025/07/31 13:13:57 by joaolive         ###   ########.fr       */
+/*   Updated: 2025/09/14 09:18:41 by joaolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 int	ft_puthex(unsigned long long num, size_t size_in_bytes, char specifier)
 {

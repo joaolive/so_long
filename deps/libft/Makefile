@@ -6,7 +6,7 @@
 #    By: joaolive <joaolive@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/31 09:06:36 by joaolive          #+#    #+#              #
-#    Updated: 2025/09/08 18:16:55 by joaolive         ###   ########.fr        #
+#    Updated: 2025/09/14 09:25:58 by joaolive         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -164,61 +164,18 @@ build: $(NAME)
 	@echo "───────────────────────────────────────────────"
 	@echo ""
 
-# default rule: compile only the CORE
-$(NAME): $(CORE_OBJS)
+# default rule: compile ALL modules
+$(NAME): $(ALL_OBJS)
 	@$(AR) $@ $^
-	@echo "✨ CORE magic! $(NAME) is ready to use! ✨"
+	@echo "🎉 $(NAME) compiled successfully with ALL modules 🚀"
 
 # Include dependency files to track header changes
 -include $(DEPS)
 
-# Object compilation rules
-# For each module, define a rule to create its objects in the correct directory
-$(OBJ_DIR)/core/%.o: $(SRC_DIR)/core/%.c
-	@mkdir -p $(OBJ_DIR)/core
-	@printf "  $(CC_PINK)[CC]$(RESET) $(CC_BLUE)Compiling$(RESET) $(CC_YELLOW)CORE$(RESET) $(CC_BLUE)module$(RESET) $(CC_PINK)%-28s$(RESET) -> $(CC_YELLOW)%s$(RESET)\n" $< $@
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	@mkdir -p $(dir $@)
+	@printf "  $(CC_BLUE)[CC]$(RESET) Compiling $(CC_YELLOW)%s$(RESET) -> $(CC_PINK)%s$(RESET)\n" $< $@
 	@$(CC) $(CCFLAGS) $(DEPFLAGS) $(CPPFLAGS) -c $< -o $@
-
-$(OBJ_DIR)/lst/%.o: $(SRC_DIR)/lst/%.c
-	@mkdir -p $(OBJ_DIR)/lst
-	@printf "  $(CC_BLUE)[CC]$(RESET) $(CC_YELLOW)Compiling$(RESET) $(CC_PINK)LST$(RESET) $(CC_YELLOW)module$(RESET) $(CC_BLUE)%-28s$(RESET) -> $(CC_PINK)%s$(RESET)\n" $< $@
-	@$(CC) $(CCFLAGS) $(DEPFLAGS) $(CPPFLAGS) -c $< -o $@
-
-$(OBJ_DIR)/dlst/%.o: $(SRC_DIR)/dlst/%.c
-	@mkdir -p $(OBJ_DIR)/dlst
-	@printf "  $(CC_YELLOW)[CC]$(RESET) $(CC_PINK)Compiling$(RESET) $(CC_BLUE)DLST$(RESET) $(CC_PINK)module$(RESET) $(CC_YELLOW)%-28s$(RESET) -> $(CC_BLUE)%s$(RESET)\n" $< $@
-	@$(CC) $(CCFLAGS) $(DEPFLAGS) $(CPPFLAGS) -c $< -o $@
-
-$(OBJ_DIR)/gnl/%.o: $(SRC_DIR)/gnl/%.c
-	@mkdir -p $(OBJ_DIR)/gnl
-	@printf "  $(CC_PINK)[CC]$(RESET) $(CC_BLUE)Compiling$(RESET) $(CC_YELLOW)GNL$(RESET) $(CC_BLUE)module$(RESET) $(CC_PINK)%-28s$(RESET) -> $(CC_YELLOW)%s$(RESET)\n" $< $@
-	@$(CC) $(CCFLAGS) $(DEPFLAGS) $(CPPFLAGS) -c $< -o $@
-
-$(OBJ_DIR)/printf/%.o: $(SRC_DIR)/printf/%.c
-	@mkdir -p $(OBJ_DIR)/printf
-	@printf "  $(CC_BLUE)[CC]$(RESET) $(CC_YELLOW)Compiling$(RESET) $(CC_PINK)PRINTF$(RESET) $(CC_YELLOW)module$(RESET) $(CC_BLUE)%-28s$(RESET) -> $(CC_PINK)%s$(RESET)\n" $< $@
-	@$(CC) $(CCFLAGS) $(DEPFLAGS) $(CPPFLAGS) -c $< -o $@
-
-# Modular compilation
-lst: $(CORE_OBJS) $(LST_OBJS)
-	@$(AR) $(NAME) $^
-	@echo "🎉 $(NAME) compiled successfully with LST module 🚀"
-
-dlst: $(CORE_OBJS) $(DLST_OBJS)
-	@$(AR) $(NAME) $^
-	@echo "🎉 $(NAME) compiled successfully with DLST module 🚀"
-
-gnl: $(CORE_OBJS) $(GNL_OBJS)
-	@$(AR) $(NAME) $^
-	@echo "🎉 $(NAME) compiled successfully with GNL module 🚀"
-
-printf: $(CORE_OBJS) $(PRINTF_OBJS)
-	@$(AR) $(NAME) $^
-	@echo "🎉 $(NAME) compiled successfully with PRINTF module 🚀"
-
-everything: $(ALL_OBJS)
-	@$(AR) $(NAME) $^
-	@echo "🎉 $(NAME) compiled successfully! 🎊"
 
 # Cleaning Rules
 clean:
@@ -233,4 +190,4 @@ re: fclean all
 	@echo "🚀 Project has been rebuilt from scratch!"
 
 # PHONY Targets
-.PHONY: all clean fclean re lst dlst printf everything
+.PHONY: all clean fclean re

@@ -6,11 +6,11 @@
 /*   By: joaolive <joaolive@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 08:36:40 by joaolive          #+#    #+#             */
-/*   Updated: 2025/08/31 15:26:09 by joaolive         ###   ########.fr       */
+/*   Updated: 2025/09/14 09:17:55 by joaolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "dlst.h"
+#include "libft.h"
 
 void	ft_dlstclear(t_dlist *lst, void (*del)(void*))
 {

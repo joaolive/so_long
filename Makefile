@@ -6,7 +6,7 @@
 #    By: joaolive <joaolive@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/06 05:55:59 by joaolive          #+#    #+#              #
-#    Updated: 2025/09/13 19:27:55 by joaolive         ###   ########.fr        #
+#    Updated: 2025/09/14 09:16:26 by joaolive         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,7 +94,7 @@ build: $(NAME)
 	@echo ""
 
 $(NAME): $(MLX_BUILD)/libmlx42.a $(SRC_OBJS)
-	@$(MAKE) -C $(LIBFT_DIR) gnl printf
+	@$(MAKE) -C $(LIBFT_DIR)
 	$(CC) $(SRC_OBJS) -o $(NAME) $(LDFLAGS) $(LDLIBS)
 	@echo "🎉 $(NAME) compiled successfully! 🎊"
 
@@ -103,7 +103,6 @@ $(NAME): $(MLX_BUILD)/libmlx42.a $(SRC_OBJS)
 
 $(MLX_BUILD)/libmlx42.a:
 	@mkdir -p $(MLX_BUILD)
-	@printf "  $(CC_YELLOW)[CC]$(RESET) $(CC_PINK)Compiling$(RESET) $(CC_BLUE)MLX$(RESET) $(CC_PINK)library$(RESET) $(CC_YELLOW)%-28s$(RESET)\n" $< $@
 	@cd $(MLX_BUILD) && cmake .. >/dev/null
 	@cmake --build $(MLX_BUILD) -j4
 

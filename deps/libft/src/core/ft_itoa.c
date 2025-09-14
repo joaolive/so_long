@@ -6,11 +6,11 @@
 /*   By: joaolive <joaolive@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 18:23:13 by joaolive          #+#    #+#             */
-/*   Updated: 2025/09/01 10:40:17 by joaolive         ###   ########.fr       */
+/*   Updated: 2025/09/14 09:17:40 by joaolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "core.h"
+#include "libft.h"
 
 static void	ft_fill_number_str(char *s, int size, int n)
 {
